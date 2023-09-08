@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Engine | afripavostudio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script> -->
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="game">
+        <div class="dashboard__view">
+          <div class="rev-counter">
+            <div class="needle" id="revNeedle"></div>
+            <div class="range-indicator">
+              <p class="indicator">1</p>
+              <p class="indicator">2</p>
+              <p class="indicator">3</p>
+              <p class="indicator">4</p>
+            </div>
+          </div>
+          <p style="margin: 0">Gear</p>
+          <div class="gear-lever">
+            <button data-id="gear_up">
+              <img
+                data-id="gear_up"
+                style="width: 30px"
+                alt="gear up"
+                src="./assets/up.svg"
+              />
+            </button>
+            <button data-id="gear_down">
+              <img
+                data-id="gear_down"
+                style="width: 30px"
+                alt="gear down"
+                src="./assets/down.svg"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="canvas__container">
+          <canvas width="300" height="500" id="arena"></canvas>
+          <canvas width="300" height="500" id="arenaBackground"></canvas>
+        </div>
+        <div class="dashboard__view">
+          <div class="speedometer">
+            <div class="needle" id="speedNeedle"></div>
+            <div class="range-indicator">
+              <p class="indicator">40</p>
+              <p class="indicator">60</p>
+              <p class="indicator">80</p>
+              <p class="indicator">100</p>
+            </div>
+            <!-- <div class="range-indicator"></div> -->
+            <!-- Add more range indicators as needed -->
+          </div>
+          <p style="margin: 0">Fuel</p>
+          <div class="fuel-gauge">
+            <div class="fuel-level" id="fuelLevel"></div>
+            <div class="fuel-level" id="fuelLevel"></div>
+            <div class="fuel-level" id="fuelLevel"></div>
+            <!-- <div class="range-indicator"></div>
+              <div class="range-indicator"></div> -->
+            <!-- Add more range indicators as needed -->
+          </div>
+        </div>
+
+        <!-- <div>
+          <div class="rav__count"></div>
+          <div class="speed__count"></div>
+          <div class="fuel"></div>
+        </div> -->
+      </div>
+    </div>
+
+    <script>
+      const can = document.getElementById("arena");
+      can.addEventListener("pointerdown", function (event) {
+        if (event.offsetX < can.width / 2) {
+          console.log("left");
+        } else if (event.offsetX > can.width / 2) {
+          console.log("right");
+        }
+        // const key = event.target;
+      });
+    </script>
+  </body>
+</html>
